@@ -1,0 +1,19 @@
+blockchain-project/
+├── backend/
+│   ├── src/
+│   │   └── index.js
+│   ├── Dockerfile
+│   └── package.json
+├── frontend/
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── components/
+│   │   │   └── BlockchainStatus.jsx
+│   │   ├── App.jsx
+│   │   ├── index.jsx
+│   │   └── index.css
+│   ├── Dockerfile
+│   ├── package.json
+│   └── vite.config.js
+└── docker-compose.yml 
