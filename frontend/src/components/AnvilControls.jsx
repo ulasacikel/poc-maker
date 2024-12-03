@@ -49,38 +49,23 @@ function AnvilControls() {
         }
     };
 
-    const renderParamInput = useCallback((param) => {
-        switch (param.type) {
-            case 'boolean':
-                return (
-                    <select
-                        value={params[param.name] || false}
-                        onChange={(e) => handleParamChange(param.name, e.target.value === 'true')}
-                    >
-                        <option value="false">False</option>
-                        <option value="true">True</option>
-                    </select>
-                );
-            case 'number':
-                return (
+    const renderParamInput = (param) => {
+        const value = params[param.name] || '';
+        
+        return (
+            <div className="param-input" key={param.name}>
+                <label>{param.name}:</label>
+                <div className="input-with-button">
                     <input
-                        type="number"
-                        value={params[param.name] || param.default || ''}
-                        onChange={(e) => handleParamChange(param.name, Number(e.target.value))}
-                        placeholder={param.placeholder}
-                    />
-                );
-            default:
-                return (
-                    <input
-                        type="text"
-                        value={params[param.name] || ''}
+                        type={param.type === 'number' ? 'number' : 'text'}
+                        value={value}
                         onChange={(e) => handleParamChange(param.name, e.target.value)}
-                        placeholder={param.placeholder}
+                        placeholder={param.placeholder || param.type}
                     />
-                );
-        }
-    }, [params]);
+                </div>
+            </div>
+        );
+    };
 
     return (
         <div className="anvil-controls">
@@ -111,8 +96,7 @@ function AnvilControls() {
                 <div className="method-params">
                     <h3>Parameters</h3>
                     {anvilMethods[selectedMethod].params.map(param => (
-                        <div key={param.name} className="param-input">
-                            <label>{param.name}:</label>
+                        <div key={param.name}>
                             {renderParamInput(param)}
                         </div>
                     ))}

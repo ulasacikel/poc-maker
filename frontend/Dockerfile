@@ -1,22 +1,14 @@
-# Build stage
-FROM node:18-alpine as build
+FROM node:18-slim
 
 WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
-RUN npm install
+RUN npm install && \
+    npm install react-router-dom @monaco-editor/react
 
 # Copy source files
 COPY . .
-
-# Development stage
-FROM node:18-alpine
-
-WORKDIR /app
-
-# Copy from build stage
-COPY --from=build /app ./
 
 EXPOSE 3000
 

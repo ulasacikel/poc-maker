@@ -75,7 +75,50 @@ export const anvilMethods = {
         params: [
             { name: 'chainId', type: 'number' }
         ]
+    },
+
+    // Contract Inspection
+    getCode: {
+        category: 'Contract Inspection',
+        description: 'Gets the bytecode at a given address',
+        params: [
+            {
+                name: 'address',
+                type: 'address',
+                placeholder: '0x...',
+                description: 'The address to get code from'
+            }
+        ]
+    },
+
+    // Optional: Add getStorageAt as well
+    getStorageAt: {
+        category: 'Contract Inspection',
+        description: 'Gets the storage value at a given slot for an address',
+        params: [
+            {
+                name: 'address',
+                type: 'address',
+                placeholder: '0x...',
+                description: 'The contract address'
+            },
+            {
+                name: 'slot',
+                type: 'string',
+                placeholder: '0x0',
+                description: 'The storage slot to read'
+            }
+        ]
     }
 };
 
-export const methodCategories = [...new Set(Object.values(anvilMethods).map(m => m.category))]; 
+export const methodCategories = [
+    'Account Management',
+    'Mining Control',
+    'Transaction Management',
+    'Fork Management',
+    'State Management',
+    'Node Configuration',
+    'State Dump/Load',
+    'Contract Inspection'
+]; 

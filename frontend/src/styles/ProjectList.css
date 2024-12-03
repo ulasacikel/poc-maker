@@ -1,0 +1,168 @@
+.project-list {
+    background-color: var(--card-background);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    padding: 2rem;
+}
+
+.project-list h2 {
+    color: var(--secondary-color);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background-color: var(--background-color);
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.project-header h3 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.archive-button {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.archive-button:hover {
+    background-color: #dc2626;
+}
+
+.project-info {
+    margin-bottom: 1.5rem;
+}
+
+.repo-url {
+    word-break: break-all;
+}
+
+.repo-url a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.repo-url a:hover {
+    text-decoration: underline;
+}
+
+.project-contracts h4 {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.contract-info {
+    background-color: var(--card-background);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contract-info h5 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-primary);
+}
+
+.contract-address {
+    margin: 0;
+    word-break: break-all;
+}
+
+.contract-address code {
+    background-color: var(--background-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-family: monospace;
+    font-size: 0.875rem;
+}
+
+.no-projects {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 2rem;
+    background-color: var(--background-color);
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-color);
+}
+
+.loading, .error {
+    text-align: center;
+    padding: 2rem;
+}
+
+.error {
+    color: #dc2626;
+}
+
+.project-header-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.archive-switch {
+    display: flex;
+    align-items: center;
+}
+
+.switch-button {
+    background-color: var(--background-color);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.switch-button:hover {
+    background-color: var(--border-color);
+}
+
+.switch-button.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.archive-switch label,
+.archive-switch input[type="checkbox"] {
+    display: none;
+}
+
+.contract-code {
+    margin-top: 1rem;
+    background-color: var(--background-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+}
+
+.contract-code pre {
+    margin: 0;
+    font-family: monospace;
+    font-size: 0.875rem;
+} 

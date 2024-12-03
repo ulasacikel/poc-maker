@@ -91,6 +91,26 @@ class AnvilService {
     async getNodeInfo() {
         return await this.provider.send('anvil_nodeInfo', []);
     }
+
+    async getCode(address) {
+        try {
+            const code = await this.provider.getCode(address);
+            return code;
+        } catch (error) {
+            console.error('Failed to get contract code:', error);
+            throw error;
+        }
+    }
+
+    async getStorageAt(address, slot) {
+        try {
+            const storage = await this.provider.getStorageAt(address, slot);
+            return storage;
+        } catch (error) {
+            console.error('Failed to get contract storage:', error);
+            throw error;
+        }
+    }
 }
 
 module.exports = AnvilService; 
